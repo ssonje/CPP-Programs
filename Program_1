@@ -1,0 +1,65 @@
+/*
+Define a class Birthday having data members name, day, month and year.
+Accept and dsiplay data using object of this class.
+*/
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+class Birthday 
+{
+	string name;
+	int day,month,year;
+	
+	public:
+		
+		void accept();
+		void display();
+};
+
+void Birthday :: accept()
+{
+	cout<<"\nEnter your name :- ";
+	cin>>name;
+	
+	cout<<"\nEnter the birth-date :- ";
+	cin>>day;
+	
+	cout<<"\nEnter the birth-month :- ";
+	cin>>month;
+	
+	cout<<"\nEnter the birth-year :- ";
+	cin>>year;
+}
+
+void Birthday :: display()
+{
+	cout<<"\nYour name is "<<name;
+	cout<<"\nAnd Your Birthday is on "<<day<<"/"<<month<<"/"<<year;
+}
+
+int main()
+{
+	Birthday b;
+	b.accept();
+	b.display();
+	return 0;
+	
+}
+
+
+/*
+output :-
+
+Enter your name :- sanket
+
+Enter the birth-date :- 01
+
+Enter the birth-month :- 12
+
+Enter the birth-year :- 1999
+
+Your name is sanket
+And Your Birthday is on 1/12/1999
+*/
