@@ -1,0 +1,92 @@
+/*
+Define class Cricket Player with name, country and match score to store a records for last 5 matches and average.
+Define read, avg, display function for it.
+*/
+
+#include<iostream>
+using namespace std;
+
+class Cricket
+{
+	string name,country;
+	float match_score[5];
+	float average_score;
+	
+	public:
+		
+		void read();
+		void calculate_average();
+		void display();
+};
+
+void Cricket :: read()
+{
+	cout<<"\nEnter the details :- ";
+	cout<<"\nEnter the name of the player :- ";
+	cin>>name;
+	cout<<"Enter the country of the player :- ";
+	cin>>country;
+	cout<<"Enter the score of the player in the 5 matches :- \n";
+	for(int i=0;i<5;i++)
+	{
+		cout<<"Enter the score of the match :- ";
+		cin>>match_score[i];
+	}
+}
+
+void Cricket :: calculate_average()
+{
+	float sum = 0;
+	for(int i=0;i<5;i++)
+	{
+		sum = sum + match_score[i];
+	}
+	average_score = sum / 5;
+}
+
+void Cricket :: display()
+{
+	cout<<"\nThe details are as follows :- ";
+	cout<<"\nThe name of the player is :- "<<name;
+	cout<<"\nThe country of the player is :- "<<country;
+	cout<<"\nEnter the score of the player in the 5 matches :- ";
+	for(int i=0;i<5;i++)
+	{
+		cout<<"\nThe score of the match is :- "<<match_score[i];
+	}
+	cout<<"\nThe average score of the player in 5 matches is :- "<<average_score;
+}
+
+int main()
+{
+	Cricket c;
+	c.read();
+	c.calculate_average();
+	c.display();
+	return 0;
+}
+
+/* 
+Output:-
+Enter the details :-
+Enter the name of the player :- Sanket
+Enter the country of the player :- India
+Enter the score of the player in the 5 matches :-
+Enter the score of the match :- 120
+Enter the score of the match :- 248
+Enter the score of the match :- 95
+Enter the score of the match :- 29
+Enter the score of the match :- 55
+
+The details are as follows :-
+The name of the player is :- Sanket
+The country of the player is :- India
+Enter the score of the player in the 5 matches :-
+The score of the match is :- 120
+The score of the match is :- 248
+The score of the match is :- 95
+The score of the match is :- 29
+The score of the match is :- 55
+The average score of the player in 5 matches is :- 109.4
+--------------------------------
+*/
