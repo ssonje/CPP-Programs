@@ -1,0 +1,93 @@
+/*
+Create a class Furniture with information about f_code, f_type, f_quality and f_price.
+Define two objects with name, chair and table.
+Find out which has greater price.
+*/
+
+#include<iostream>
+using namespace std;
+
+class Furniture
+{
+	int f_code,f_price;
+	string f_quality, f_type;
+	
+	public:
+		
+		void get();
+		void compare(Furniture f1, Furniture f2);
+		void display();
+};
+
+void Furniture :: get()
+{
+	cout<<"\nEnter the details here :-";
+	cout<<"\nEnter the furniture code :- ";
+	cin>>f_code;
+	cout<<"Enter the furniture price :- ";
+	cin>>f_price;
+	cout<<"Enter the furniture quality :- ";
+	cin>>f_quality;
+	cout<<"Enter the furniture type :- ";
+	cin>>f_type;
+}
+
+void Furniture :: display()
+{
+	cout<<"\nThe furniture code :- "<<f_code;
+	cout<<"\nThe furniture price :- "<<f_price;
+	cout<<"\nThe furniture quality :- "<<f_quality;
+	cout<<"\nThe furniture type :- "<<f_type;
+}
+
+void Furniture :: compare(Furniture f1, Furniture f2)
+{
+	if(f1.f_price < f2.f_price)
+	{
+		cout<<"\nFurniture f1 has less price as compare to Furniture f2";
+	}
+	else
+	{
+		cout<<"\nFurniture f1 has greater price as compare to Furniture f2";
+	}
+}
+
+int main()
+{
+	Furniture f,f1,f2;
+	f1.get();
+	f2.get();
+	f1.display();
+	f2.display();
+	f.compare(f1,f2);
+	return 0;
+}
+
+/*
+Output :-
+
+Enter the details here :-
+Enter the furniture code :- 1
+Enter the furniture price :- 100
+Enter the furniture quality :- good
+Enter the furniture type :- chair
+
+Enter the details here :-
+Enter the furniture code :- 2
+Enter the furniture price :- 200
+Enter the furniture quality :- good
+Enter the furniture type :- table
+
+The furniture code :- 1
+The furniture price :- 100
+The furniture quality :- good
+The furniture type :- chair
+
+The furniture code :- 2
+The furniture price :- 200
+The furniture quality :- good
+The furniture type :- table
+
+Furniture f1 has less price as compare to Furniture f2
+--------------------------------
+*/
