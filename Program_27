@@ -1,0 +1,61 @@
+/*
+write a program to calculate area of different shapes.
+*/
+
+#include<iostream>
+using namespace std;
+
+class area_of_shape
+{
+	float area_any_shape;
+	
+	public:
+		
+		void area(float r);
+		void area(float h , float w);
+};
+
+void area_of_shape :: area(float r)
+{
+	area_any_shape = 3.14 * r * r;
+	cout<<"\nArea of the circle is :- "<<area_any_shape;
+}
+
+void area_of_shape :: area(float h, float w)
+{
+	area_any_shape = 0.5 * h * w;
+	cout<<"\nArea of the triangle is :- "<<area_any_shape;	
+}
+
+int main()
+{
+	area_of_shape a;
+	
+	//calculate the area of circle
+	float radius;
+	cout<<"\nEnter the radius of the circle to calculate area :- ";
+	cin>>radius;
+	a.area(radius);
+	
+	//calculate the area of triangle
+	float height,width;
+	cout<<"\nEnter the height of the triangle to calculate area :- ";
+	cin>>height;
+	cout<<"\nEnter the width of the triangle to calculate area :- ";
+	cin>>width;
+	a.area(height,width);
+	return 0;
+}
+
+/*Output :-
+Enter the radius of the circle to calculate area :- 10
+
+Area of the circle is :- 314
+
+Enter the height of the triangle to calculate area :- 10
+
+Enter the width of the triangle to calculate area :- 10
+
+Area of the triangle is :- 50
+--------------------------------
+*/
