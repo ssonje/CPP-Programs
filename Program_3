@@ -1,0 +1,70 @@
+/*
+Write a program to declare class Book with book_id, book_price, and book_author.
+Define a function to read and display data for it.
+Read a data for 2 objects and display the information.
+*/
+
+#include<iostream>
+using namespace std;
+
+class Book
+{
+	int book_id,book_price;
+	string book_author;
+	
+	public:
+		
+		void get();
+		void display();
+};
+
+void Book :: get()
+{
+	cout<<"\nEnter the details :";
+	cout<<"\nEnter the book id :- ";
+	cin>>book_id;
+	cout<<"\nEnter the book price :- ";
+	cin>>book_price;
+	cout<<"\nEnter the book author :- ";
+	cin>>book_author;
+}
+
+void Book :: display()
+{
+	cout<<"\nBook Id :- "<<book_id;
+	cout<<"\nBook Price :- "<<book_price;
+	cout<<"\nBook Author :- "<<book_author;
+}
+
+int main()
+{
+	Book b1,b2;
+	b1.get();
+	b2.get();
+	b1.display();
+	b2.display();
+	return 0;
+}
+
+/*
+Output :-
+
+Enter the details :
+Enter the book id :- 1
+Enter the book price :- 100
+Enter the book author :- sanket
+
+Enter the details :
+Enter the book id :- 2
+Enter the book price :- 200
+Enter the book author :- sonje
+
+Book Id :- 1
+Book Price :- 100
+Book Author :- sanket
+
+Book Id :- 2
+Book Price :- 200
+Book Author :- sonje
+--------------------------------
+*/
