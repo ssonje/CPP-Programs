@@ -1,0 +1,109 @@
+/*
+Define a program to declare a class Employee with emp_id, emp_name, emp_salary with appropriate function.
+Read this data for 5 employees and display it.
+*/
+
+#include<iostream>
+using namespace std;
+
+class Employee
+{
+	int emp_id,emp_salary;
+	string emp_name;
+	
+	public:
+		
+		void read();
+		void display();
+};
+
+void Employee :: read()
+{
+	cout<<"\nEnter the details here :-";
+	cout<<"\nEnter the name of the employee :- ";
+	cin>>emp_name;
+	
+	cout<<"Enter the id of the employee :- ";
+	cin>>emp_id;
+	
+	cout<<"Enter the salary of the employee :- ";
+	cin>>emp_salary;
+}
+
+void Employee :: display()
+{
+	cout<<"\nEnter the details here :-";
+	cout<<"\nThe name of the employee is :- "<<emp_name;
+	cout<<"\nThe id of the employee is :- "<<emp_id;
+	cout<<"\nThe salary of the employee is :- "<<emp_salary;
+}
+
+int main()
+{
+	Employee e[5];
+	for(int i=0;i<5;i++)
+	{
+		e[i].read();
+	}
+	
+	for(int i=0;i<5;i++)
+	{
+		e[i].display();
+	}
+	return 0;
+}
+
+/*
+Output:- 
+
+Enter the details here :-
+Enter the name of the employee :- sanket
+Enter the id of the employee :- 1
+Enter the salary of the employee :- 12000
+
+Enter the details here :-
+Enter the name of the employee :- aniket
+Enter the id of the employee :- 2
+Enter the salary of the employee :- 14000
+
+Enter the details here :-
+Enter the name of the employee :- shubham
+Enter the id of the employee :- 3
+Enter the salary of the employee :- 16000
+
+Enter the details here :-
+Enter the name of the employee :- sagar
+Enter the id of the employee :- 4
+Enter the salary of the employee :- 18000
+
+Enter the details here :-
+Enter the name of the employee :- sunny
+Enter the id of the employee :- 5
+Enter the salary of the employee :- 20000
+
+Enter the details here :-
+The name of the employee is :- sanket
+The id of the employee is :- 1
+The salary of the employee is :- 12000
+
+Enter the details here :-
+The name of the employee is :- aniket
+The id of the employee is :- 2
+The salary of the employee is :- 14000
+
+Enter the details here :-
+The name of the employee is :- shubham
+The id of the employee is :- 3
+The salary of the employee is :- 16000
+
+Enter the details here :-
+The name of the employee is :- sagar
+The id of the employee is :- 4
+The salary of the employee is :- 18000
+
+Enter the details here :-
+The name of the employee is :- sunny
+The id of the employee is :- 5
+The salary of the employee is :- 20000
+--------------------------------
+*/
