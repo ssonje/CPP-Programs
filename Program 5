@@ -32,7 +32,7 @@ void Employee :: read()
 
 void Employee :: display()
 {
-	cout<<"\nEnter the details here :-";
+	cout<<"\nThe details are :-";
 	cout<<"\nThe name of the employee is :- "<<emp_name;
 	cout<<"\nThe id of the employee is :- "<<emp_id;
 	cout<<"\nThe salary of the employee is :- "<<emp_salary;
@@ -81,27 +81,27 @@ Enter the name of the employee :- sunny
 Enter the id of the employee :- 5
 Enter the salary of the employee :- 20000
 
-Enter the details here :-
+The details are :-
 The name of the employee is :- sanket
 The id of the employee is :- 1
 The salary of the employee is :- 12000
 
-Enter the details here :-
+The details are :-
 The name of the employee is :- aniket
 The id of the employee is :- 2
 The salary of the employee is :- 14000
 
-Enter the details here :-
+The details are :-
 The name of the employee is :- shubham
 The id of the employee is :- 3
 The salary of the employee is :- 16000
 
-Enter the details here :-
+The details are :-
 The name of the employee is :- sagar
 The id of the employee is :- 4
 The salary of the employee is :- 18000
 
-Enter the details here :-
+The details are :-
 The name of the employee is :- sunny
 The id of the employee is :- 5
 The salary of the employee is :- 20000
