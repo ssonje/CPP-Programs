@@ -1,0 +1,84 @@
+/*
+Write a program to define staff having data members as name and post.
+Accept  this data for 5 staff and display name of staff who are "H.O.D."
+*/
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+class Staff
+{
+	string name,post;
+	
+	public:
+		
+		void read();
+		void display();
+};
+
+void Staff :: read()
+{
+	cout<<"\nEnter the staff details :- ";
+	cout<<"\nEnter the name of the staff :- ";
+	cin>>name;
+	cout<<"Enter the post of the staff employee :- ";
+	cin>>post;
+}
+
+void Staff :: display()
+{
+	string hod = "hod";
+	if(post==hod)
+	{
+		cout<<"\nThe staff details are as follows :- ";
+		cout<<"\nThe name of the staff employee is :- "<<name;
+		cout<<"\nThe post of the staff employee is :- "<<post;		
+	}
+}
+
+int main()
+{
+	Staff s[5];
+	for(int i=0;i<5;i++)
+	{
+		s[i].read();
+	}
+	for(int i=0;i<5;i++)
+	{
+		s[i].display();
+	}
+	return 0;
+}
+
+/*
+Output :-
+Enter the staff details :-
+Enter the name of the staff :- sanket
+Enter the post of the staff employee :- hod
+
+Enter the staff details :-
+Enter the name of the staff :- himani
+Enter the post of the staff employee :- clark
+
+Enter the staff details :-
+Enter the name of the staff :- dilip
+Enter the post of the staff employee :- clark
+
+Enter the staff details :-
+Enter the name of the staff :- anita
+Enter the post of the staff employee :- manager
+
+Enter the staff details :-
+Enter the name of the staff :- aniket
+Enter the post of the staff employee :- hod
+
+The staff details are as follows :-
+The name of the staff employee is :- sanket
+The post of the staff employee is :- hod
+
+The staff details are as follows :-
+The name of the staff employee is :- aniket
+The post of the staff employee is :- hod
+--------------------------------
+*/
