@@ -1,0 +1,65 @@
+/*
+Define class Time having data members hours, minutes and seconds. 
+Accepts seconds from user and convert it in appropriate hours, minutes and seconds,
+And display it for one object of class.
+*/
+
+#include<iostream>
+using namespace std;
+
+class Time
+{
+	int hours,minutes,seconds;
+	
+	public:
+		
+		void get();
+		void calculate();
+		void display();
+};
+
+void Time :: get()
+{
+	cout<<"\nEnter the details :";
+	cout<<"\nEnter the seconds :- ";
+	cin>>seconds;
+}
+
+void Time :: calculate()
+{
+	if(seconds>60*60)
+	{
+		hours = seconds / 3600;
+		seconds = seconds - hours*60*60;
+	}
+	minutes = seconds / 60;
+	seconds = seconds - minutes*60;
+}
+
+void Time :: display()
+{
+	cout<<"\nHours :- "<<hours;
+	cout<<"\nMinutes :- "<<minutes;
+	cout<<"\nSeconds :- "<<seconds;
+}
+
+int main()
+{
+	Time t;
+	t.get();
+	t.calculate();
+	t.display();
+	return 0;
+}
+
+/*
+Output :-
+
+Enter the details :
+Enter the seconds :- 3662
+
+Hours :- 1
+Minutes :- 1
+Seconds :- 2
+--------------------------------
+*/
