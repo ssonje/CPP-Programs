@@ -1,0 +1,73 @@
+/*
+write a program to calculate power of different bases.
+*/
+
+#include<iostream>
+using namespace std;
+
+class power
+{
+	int answer;
+	
+	public:
+		
+		void power_answer();
+		void power_answer(int power_of_index);
+};
+
+void power :: power_answer()
+{
+	int index,power;
+	answer = 1;
+	
+	cout<<"\nEnter the index :- ";
+	cin>>index;
+	cout<<"\nEnter the power of that index :- "; 
+	cin>>power;
+	
+	for(int i=1;i<=power;i++)
+	{
+		answer = answer * index;
+	}
+	
+	cout<<"\nAnswer is :- "<<answer;
+}
+
+void power :: power_answer(int power_of_index)
+{
+	int index;
+	answer = 1;
+	
+	cout<<"\nEnter the index :- ";
+	cin>>index;
+	
+	for(int i=1;i<=power_of_index;i++)
+	{
+		answer = answer * index;
+	}
+	
+	cout<<"\nAnswer is :- "<<answer;
+}
+
+int main()
+{
+	power p;
+	p.power_answer();
+	
+	int power_input;
+	cout<<"\nEnter the power of index :- ";
+	cin>>power_input;
+	p.power_answer(power_input);
+	return 0;
+}
+
+/*Output :-
+Enter the index :- 2
+Enter the power of that index :- 2
+Answer is :- 4
+
+Enter the power of index :- 3
+Enter the index :- 3
+Answer is :- 27
+--------------------------------
+*/
