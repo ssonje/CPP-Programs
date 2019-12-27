@@ -1,0 +1,57 @@
+/*
+Overload the unary operator - so that when it is used with an object, 
+the value of the numeric data members of the class will be negated.
+*/
+
+#include<iostream>
+using namespace std;
+
+class Negative
+{
+	int value;
+	
+	public:
+		
+		void get();
+		void operator - ();
+		void display();	
+};
+
+void Negative :: get()
+{
+	cout<<"\nEnter the details here :- ";
+	cout<<"\nEnter the value :- ";
+	cin>>value;
+}
+
+void Negative :: operator - ()
+{
+	value = value * (-1);
+}
+
+void Negative :: display()
+{
+	cout<<"\nThe result is as follows :- ";
+	cout<<"\nThe negated value is :- "<<value;
+}
+
+int main()
+{
+	Negative obj;
+	obj.get();
+	- obj;
+	obj.display();
+	return 0;
+}
+
+/*
+Output:-
+
+Enter the details here :-
+Enter the value :- 14
+
+The result is as follows :-
+The negated value is :- -14
+
+--------------------------------
+*/
