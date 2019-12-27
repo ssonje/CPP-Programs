@@ -1,0 +1,30 @@
+/*
+Write a Program to define a static member function to display a Welcome message.
+*/
+
+#include <iostream>
+using namespace std;
+
+class Static_function
+{
+public:
+
+    static void getc()
+    {
+        cout<<"Hi , My name is Sanket.";
+    }
+};
+
+int main()
+{
+    Static_function::getc();
+    return 0;
+}
+
+/*
+Output:-
+
+Hi , My name is Sanket.
+
+--------------------------------
+*/
