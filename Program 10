@@ -1,0 +1,56 @@
+/*
+Write a program to define a class having data members principle, duration and rate of interest.
+Declare rate of interest static member variable.
+Calculate the simple interest and display it.
+*/
+
+#include<iostream>
+using namespace std;
+
+class Gravity
+{
+	float weight,m;
+	static float g;
+	
+	public:
+		void get();
+		void cal();
+		void display();
+};
+
+void Gravity :: get()
+{
+	cout<<"\nEnter the mass of person in kg :- ";
+	cin>>m;
+}
+		
+void Gravity :: cal()
+{
+	weight = m * g;
+}
+		
+void Gravity :: display()
+{
+	cout<<"\nWeight(N) of the person is :- "<<weight;
+}
+
+float Gravity :: g = 9.8;
+
+int main()
+{
+	Gravity g;
+	g.get();
+	g.cal();
+	g.display();
+	return 0;
+}
+
+/*
+Output :-
+
+Enter the mass of person in kg :- 65
+
+Weight(N) of the person is :- 637
+
+--------------------------------
+*/
