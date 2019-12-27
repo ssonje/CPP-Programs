@@ -17,7 +17,8 @@ public:
 
 int main()
 {
-    Static_function::getc();
+    Static_function s;
+	s.getc();
     return 0;
 }
 
