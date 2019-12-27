@@ -1,0 +1,46 @@
+/*
+Write a program to count the number of objects of a class.
+Keep tracking of it using static var.
+*/
+
+#include<iostream>
+using namespace std;
+
+class Counter
+{
+	static int counter;
+	
+	public:
+		
+		void cal()
+		{
+			counter++;
+		}
+		
+		void display()
+		{
+			cout<<"\nObject called := "<<counter<<" times";
+		}
+		
+};
+
+int Counter :: counter = 0;
+
+int main()
+{
+	Counter c;
+	c.cal();
+	c.cal();
+	c.cal();
+	c.cal();
+	c.display();
+	return 0;
+}
+
+/*
+Output :-
+
+Object called := 4 times
+
+--------------------------------
+*/
