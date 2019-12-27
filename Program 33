@@ -1,0 +1,58 @@
+/*
+Overload the operator > to compare the height of two person.
+*/
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+class Height
+{
+	int height1,height2;
+	
+	public:
+		
+		void get();
+		void operator >(Height h);
+};
+
+void Height :: get()
+{
+	cout<<"\nEnter the details here :- ";
+	cout<<"\nEnter the height of person 1 in centi-meters :- ";
+	cin>>height1;
+	cout<<"Enter the height of person 2 in centi-meters :- ";
+	cin>>height2;
+}
+
+void Height :: operator >(Height h)
+{
+	if(height1>h.height2)
+	{
+		cout<<"\nPerson 1 is taller than person 2.";
+	}
+	else
+	{
+		cout<<"\nPerson 2 is taller than person 1.";
+	}
+}
+
+int main()
+{
+	Height obj,o;
+	obj.get();
+	o > obj;
+	return 0;
+}
+
+/*
+Output:-
+
+Enter the details here :-
+Enter the height of person 1 in centi-meters :- 170
+Enter the height of person 2 in centi-meters :- 178
+
+Person 2 is taller than person 1.
+
+--------------------------------
+*/
