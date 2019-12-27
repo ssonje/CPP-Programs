@@ -1,0 +1,73 @@
+/*
+Overload the operator + to add two object of class 'Time'.
+*/
+
+#include<iostream>
+using namespace std;
+
+class Time
+{
+	int hours,minutes,seconds;
+	
+	public:
+		
+		void get();
+		void operator + (Time t);
+		void display();	
+};
+
+void Time :: get()
+{
+	cout<<"\nEnter the details here :- ";
+	cout<<"\nEnter the time in hours :- ";
+	cin>>hours;
+	cout<<"Enter the time in minutes :- ";
+	cin>>minutes;
+	cout<<"Enter the time in seconds :- ";
+	cin>>seconds;
+}
+
+void Time :: operator + (Time t)
+{
+	hours = hours + t.hours;
+	minutes = minutes + t.minutes;
+	seconds = seconds + t.seconds;
+}
+
+void Time :: display()
+{
+	cout<<"\nThe total addition details are :- ";
+	cout<<"\nThe total time in hours is :- "<<hours;
+	cout<<"\nThe total time in minutes is :- "<<minutes;
+	cout<<"\nThe total time in seconds is :- "<<seconds;
+}
+
+int main()
+{
+	Time t1,t2;
+	t1.get();
+	t2.get();
+	t1+t2;
+	t1.display();
+	return 0;
+}
+
+/*
+Output:-
+
+Enter the details here :-
+Enter the time in hours :- 12
+Enter the time in minutes :- 12
+Enter the time in seconds :- 12
+
+Enter the details here :-
+Enter the time in hours :- 45
+Enter the time in minutes :- 45
+Enter the time in seconds :- 45
+
+The total addition details are :-
+The total time in hours is :- 57
+The total time in minutes is :- 57
+The total time in seconds is :- 57
+--------------------------------
+*/
