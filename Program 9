@@ -1,0 +1,60 @@
+/*
+Write a program to define a class having data members principle, duration and rate of interest.
+Declare rate of interest static member variable.
+Calculate the simple interest and display it.
+*/
+
+#include<iostream>
+using namespace std;
+
+class Interest
+{
+	float simple_interest,principle,duration;
+	static float rate_of_interest;
+	
+	public:
+		void get();
+		void cal();
+		void display();
+};
+
+void Interest :: get()
+{
+	cout<<"\nEnter the principle value here :- ";
+	cin>>principle;
+	
+	cout<<"Enter the duration :- ";
+	cin>>duration;
+}
+		
+void Interest :: cal()
+{
+	simple_interest = principle * duration * rate_of_interest / 100;
+}
+		
+void Interest :: display()
+{
+	cout<<"\nSimple Interest = "<<simple_interest;
+}
+
+float Interest :: rate_of_interest = 9.8;
+
+int main()
+{
+	Interest i;
+	i.get();
+	i.cal();
+	i.display();
+	return 0;
+}
+
+/*
+Output :-
+
+Enter the principle value here :- 23
+Enter the duration :- 3
+
+Simple Interest = 6.762
+
+--------------------------------
+*/
