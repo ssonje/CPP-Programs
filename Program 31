@@ -1,0 +1,64 @@
+/*
+Overload the unary operator ~ to reverse the given number.
+*/
+
+#include<iostream>
+using namespace std;
+
+class Reverse
+{
+	int number;
+	int reverse;
+	
+	public:
+		
+		void get();
+		void operator ~ ();
+		void display();	
+};
+
+void Reverse :: get()
+{
+	cout<<"\nEnter the details here :- ";
+	cout<<"\nEnter the number :- ";
+	cin>>number;
+}
+
+void Reverse :: operator ~ ()
+{
+	int remainder;
+	reverse = 0;
+	while(number!=0)
+	{
+		remainder = number % 10;
+		reverse = reverse * 10 + remainder;	
+		number = number / 10;
+	}
+}
+
+void Reverse :: display()
+{
+	cout<<"\nThe result is as follows :- ";
+	cout<<"\nThe reverse of the given number is :- "<<reverse;
+}
+
+int main()
+{
+	Reverse obj;
+	obj.get();
+	~ obj;
+	obj.display();
+	return 0;
+}
+
+/*
+Output:-
+
+Enter the details here :-
+Enter the number :- 57693656
+
+The result is as follows :-
+The reverse of the given number is :- 65639675
+
+--------------------------------
+*/
