@@ -1,0 +1,105 @@
+/*
+Create a class Student having data members rollno, name and inherit class Exam with 3 subject marks, total and percentage.
+Read those values and display result with rollno, name, percentage and obtained class.
+*/
+
+#include<iostream>
+using namespace std;
+
+class Student
+{
+	float roll_no;
+	char name[20];
+	
+	public:
+		
+		void get_details();
+		void display();	
+};
+
+class Exam : public Student
+{
+	float marks[3], total;
+	float percentage;
+	
+	public:
+	
+		void get_detail();
+		void calculate();
+		void display_it();	
+};
+
+void Student :: get_details()
+{
+	cout<<"\nEnter the details here :- ";
+	cout<<"\nEnter the name of the student :- ";
+	cin>>name;
+	cout<<"Enter the roll number of student :- ";
+	cin>>roll_no;
+}
+
+void Student :: display()
+{
+	cout<<"\nThe details of student is as follows :- ";
+	cout<<"\nThe name of the student :- "<<name;
+	cout<<"\nThe roll number of student :- "<<roll_no;
+}
+
+void Exam :: get_detail()
+{
+	cout<<"\nEnter the marks of the stuednt in the Science, Math and English subject respective :- \n";
+	for(int i=0;i<3;i++)
+	{
+		cin>>marks[i];		
+	}
+}
+
+void Exam :: calculate()
+{
+	int sum = 0;
+	for(int i=0;i<3;i++)
+	{
+		sum = sum + marks[i];
+	}
+	total = sum;
+	
+	percentage = total / 300 * 100;
+}
+
+void Exam :: display_it()
+{
+	cout<<"\nTotal marks of the student :- "<<total;
+	cout<<"\nPercentage of the student :- "<<percentage;
+}
+
+int main()
+{
+	Exam e;
+	e.get_details();
+	e.get_detail();
+	e.calculate();
+	e.display();
+	e.display_it();
+	return 0;
+}
+
+/*
+Output:-
+
+Enter the details here :-
+Enter the name of the student :- Sanket
+Enter the roll number of student :- 322052
+
+Enter the marks of the stuednt in the Science, Math and English subject respective :-
+97
+78
+90
+
+The details of student is as follows :-
+The name of the student :- Sanket
+The roll number of student :- 322052
+Total marks of the student :- 265
+Percentage of the student :- 88.3333
+
+--------------------------------
+*/
