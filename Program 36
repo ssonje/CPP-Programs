@@ -1,0 +1,129 @@
+/*
+Define Multilevel Inheritance.
+Class Vehicle :- 
+	Members -> Wheels and Passengers.
+Class HeavyVehicle  :-
+	Members -> diesel_petrol,load;
+Class Bus :-
+	Members	-> char Make[];
+*/
+
+#include<iostream>
+using namespace std;
+
+class Vehicle
+{
+	int wheels, passengers;
+	
+	public:
+		
+		void get();
+		void display();
+		
+};
+
+void Vehicle :: get()
+{
+	cout<<"\nEnter the details of Vehicles here :- ";
+	cout<<"\nEnter the number of wheels :- ";
+	cin>>wheels;
+	cout<<"Enter the number of passengers :- ";
+	cin>>passengers;
+}
+
+void Vehicle :: display()
+{
+	cout<<"\n\nThe details of Vehicle is as follows :- ";
+	cout<<"\nTotal number of wheels :- "<<wheels;
+	cout<<"\nThe number of maximum passengers can sit are :- "<<passengers;
+}
+
+class HeavyVehicle : public Vehicle
+{
+	char c;
+	int max_load;
+	
+	public:
+		
+		void get_detail();
+		void display_detail();
+};
+
+void HeavyVehicle :: get_detail()
+{
+	cout<<"\nEnter the details of Heavy Vehicles here :- ";
+	cout<<"\nHeavy Vehicle works on Petrol? [Y/N] :- ";
+	cin>>c;
+	cout<<"Enter the maximum load that heavy vehicle can sustain in KiloGram :- ";
+	cin>>max_load;	
+}
+
+void HeavyVehicle :: display_detail()
+{
+	cout<<"\n\nThe details of Heavy Vehicles are as follows :- ";
+	cout<<"\nHeavy Vehicle works on Petrol :- "<<c;
+	cout<<"\nThe maximum load that heavy vehicle can sustain in KiloGram :- "<<max_load;
+}
+
+class Bus : public HeavyVehicle
+{
+	int price;
+	
+	public:
+		
+		void get_into_bus();
+		void display_bus();
+};
+
+void Bus :: get_into_bus()
+{
+	cout<<"\nEnter the details of bus here :- ";
+	cout<<"\nEnter the price of the bus:- ";
+	cin>>price;
+}
+
+void Bus :: display_bus()
+{
+	cout<<"\nThe details of Bus is as follows :- ";
+	cout<<"\nPrice of the bus :- "<<price;
+}
+
+int main()
+{
+	Bus b;
+	b.get();
+	b.get_detail();
+	b.get_into_bus();
+	b.display();
+	b.display_detail();
+	b.display_bus();
+	return 0;
+}
+
+/*
+Output:-
+
+Enter the details of Vehicles here :-
+Enter the number of wheels :- 4
+Enter the number of passengers :- 3
+
+Enter the details of Heavy Vehicles here :-
+Heavy Vehicle works on Petrol? [Y/N] :- y
+Enter the maximum load that heavy vehicle can sustain in KiloGram :- 123
+
+Enter the details of bus here :-
+Enter the price of the bus:- 34000
+
+
+The details of Vehicle is as follows :-
+Total number of wheels :- 4
+The number of maximum passengers can sit are :- 3
+
+The details of Heavy Vehicles are as follows :-
+Heavy Vehicle works on Petrol :- y
+The maximum load that heavy vehicle can sustain in KiloGram :- 123
+
+The details of Bus is as follows :-
+Price of the bus :- 34000
+--------------------------------
+*/
