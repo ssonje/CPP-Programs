@@ -1,0 +1,94 @@
+/*
+Define class Publisher and Branch with members (pubname, turnOver) and (city, Employee) respectively.
+Create Author with inheritance from it.
+*/
+
+#include<iostream>
+using namespace std;
+
+class Publisher
+{
+	public:
+		
+	char pubname[20];
+	int turnOver;
+		
+		void get();
+};
+
+void Publisher :: get()
+{
+	cout<<"\nEnter the Publisher details here:- ";
+	cout<<"\nEnter the Publisher Name :- ";
+	cin>>pubname;
+	cout<<"Enter the turnover of Publisher :- ";
+	cin>>turnOver;
+}
+
+class Branch
+{
+	public:
+		
+	char city[10];
+	int noEmployee;
+		
+		void get_details();
+};
+
+void Branch :: get_details()
+{
+	cout<<"\nEnter the Branch details here:- ";
+	cout<<"\nEnter the City Name :- ";
+	cin>>city;
+	cout<<"Enter the number of workers :- ";
+	cin>>noEmployee;
+}
+
+class Author : public Publisher, public Branch
+{
+	public:
+		
+		void display_details();
+};
+
+void Author :: display_details()
+{
+	cout<<"\n\nThe Publisher details are as follows :- ";
+	cout<<"\nThe Publisher Name :- "<<pubname;
+	cout<<"\nThe turnover of Publisher :- "<<turnOver;
+	cout<<"\n\nThe Branch details are as follows :- ";
+	cout<<"\nThe City Name :- "<<city;
+	cout<<"\nThe number of workers :- "<<noEmployee;
+}
+
+int main()
+{
+	Author a;
+	a.get();
+	a.get_details();
+	a.display_details();
+	return 0;
+}
+
+/*
+Output:-
+
+Enter the Publisher details here:-
+Enter the Publisher Name :- Sanket
+Enter the turnover of Publisher :- 12400
+
+Enter the Branch details here:-
+Enter the City Name :- Nashik
+Enter the number of workers :- 3000
+
+
+The Publisher details are as follows :-
+The Publisher Name :- Sanket
+The turnover of Publisher :- 12400
+
+The Branch details are as follows :-
+The City Name :- Nashik
+The number of workers :- 3000
+
+--------------------------------
+*/
