@@ -1,0 +1,183 @@
+/*
+Create Account class.
+Inherite class Saving account and Current account from Account class.
+Inherite class Fix deposit from these two classes.
+*/
+
+#include<iostream>
+using namespace std;
+
+class Account
+{
+	public:
+		
+		int account_number;
+		char name[20];
+		int balance_amount;
+		
+		void get();
+		void display();
+};
+
+void Account :: get()
+{
+	cout<<"\nEnter the account details here :- ";
+	cout<<"\nEnter the account number :- ";
+	cin>>account_number;
+	
+	cout<<"Enter your name :- ";
+	cin>>name;
+	
+	cout<<"Enter the balance of the account :- ";
+	cin>>balance_amount;
+}
+
+void Account :: display()
+{
+	cout<<"\n\nThe account details here :- ";
+	cout<<"\nThe account number :- "<<account_number;
+	cout<<"\nYour name :- "<<name;	
+	cout<<"\nThe balance of the account :- "<<balance_amount;
+}
+
+class Saving_account : virtual public Account
+{
+	public: 
+	
+		int saving_amount;
+		
+		void get_details_s();
+		void display_details_s();
+};
+
+void Saving_account :: get_details_s()
+{
+	cout<<"\nEnter the account details here :- ";
+	cout<<"\nEnter the saving amount :- ";
+	cin>>saving_amount;
+}
+
+void Saving_account :: display_details_s()
+{
+	cout<<"\n\nThe Saving account details are as follows :- ";
+	cout<<"\nThe saving amount :- "<<saving_amount;
+}
+
+class Current_account : public virtual Account
+{
+	public: 
+	
+		int withdraw_amount,temp_amount;
+		
+		void get_details_c();
+		void calculate_amount_c();
+		void display_details_c();
+};
+
+void Current_account :: get_details_c()
+{
+	cout<<"\nEnter the Current Account details :- ";
+	cout<<"\nEnter the withdraw amount :- ";
+	cin>>withdraw_amount;
+}
+
+void Current_account :: calculate_amount_c()
+{
+	temp_amount = balance_amount - withdraw_amount;
+}
+
+void Current_account :: display_details_c()
+{
+	cout<<"\n\nThe Current Account details are as follows :- ";
+	cout<<"\nThe withdraw amount :- "<<withdraw_amount;
+	cout<<"\nTotal balance amount :- "<<temp_amount;
+}
+
+class Fix_deposit : public Saving_account, public Current_account
+{
+	public: 
+	
+		int fix_deposit_amount,temp_amount;
+		
+		void get_details_f();
+		void calculate_amount_f();
+		void display_details_f();
+};
+
+void Fix_deposit :: get_details_f()
+{
+	cout<<"\nEnter the Current Account details :- ";
+	cout<<"\nEnter the fix deposit amount :- ";
+	cin>>fix_deposit_amount;
+}
+
+void Fix_deposit :: calculate_amount_f()
+{
+	temp_amount = balance_amount + fix_deposit_amount;
+}
+
+void Fix_deposit :: display_details_f()
+{
+	cout<<"\n\nThe Current Account details are as follows :- ";
+	cout<<"\nThe fix deposit amount :- "<<fix_deposit_amount;
+	cout<<"\nTotal balance amount :- "<<temp_amount;
+}
+
+int main()
+{
+	
+	Fix_deposit f;
+	
+	f.get();
+	f.get_details_s();
+	
+	f.get_details_c();
+	f.calculate_amount_c();
+	
+	f.get_details_f();
+	f.calculate_amount_f();
+	
+	f.display();
+	f.display_details_s();
+	f.display_details_c();
+	f.display_details_f();
+	
+	return 0;
+}
+
+/*
+Output :-
+
+Enter the account details here :-
+Enter the account number :- 12345
+Enter your name :- Sanket
+Enter the balance of the account :- 1000
+
+Enter the account details here :-
+Enter the saving amount :- 200
+
+Enter the Current Account details :-
+Enter the withdraw amount :- 300
+
+Enter the Current Account details :-
+Enter the fix deposit amount :- 400
+
+
+The account details here :-
+The account number :- 12345
+Your name :- Sanket
+The balance of the account :- 1000
+
+The Saving account details are as follows :-
+The saving amount :- 200
+
+The Current Account details are as follows :-
+The withdraw amount :- 300
+Total balance amount :- 700
+
+The Current Account details are as follows :-
+The fix deposit amount :- 400
+Total balance amount :- 1400
+
+--------------------------------
+*/
